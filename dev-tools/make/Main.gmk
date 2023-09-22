@@ -1,0 +1,12 @@
+blah: blah1.txt blah2.txt
+
+blah1.txt:
+	echo "hello there" >> blah1.txt
+
+blah2.txt:
+	echo "my man" >> blah2.txt
+
+blah: blah3
+
+blah3:
+	echo "made it.."
