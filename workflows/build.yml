@@ -1,0 +1,12 @@
+name: ManagedID_Auth
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  myJob:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo log
+        shell: bash
+        run: "echo Hi"
