@@ -1,3 +1,4 @@
+name: Az Download
 on:
   workflow_call:
       

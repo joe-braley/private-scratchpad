@@ -1,3 +1,4 @@
+name: Az Authenticate
 on:
   workflow_call:
 
