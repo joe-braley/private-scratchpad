@@ -24,3 +24,7 @@ jobs:
     - name: 'List current dir'
       run: |
           ls -la .
+
+    - name: 'Run command'
+      run: |
+          cat README.txt
