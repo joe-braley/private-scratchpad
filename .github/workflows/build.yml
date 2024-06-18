@@ -10,11 +10,11 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: 'Az CLI login'
-      uses: ./.github/workflows/az_auth.yml
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: 'Az CLI login'
+        uses: ./.github/workflows/az_auth.yml
 
-    - name: download file
-      uses: ./.github/workflows/az_download.yml
+      - name: download file
+        uses: ./.github/workflows/az_download.yml
