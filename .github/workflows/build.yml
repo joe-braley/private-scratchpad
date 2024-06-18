@@ -9,4 +9,5 @@ permissions:
 jobs: 
   build:
     uses: ./.github/workflows/az_auth.yml
+    secrets: inherit
     # uses: ./.github/workflows/az_download.yml
