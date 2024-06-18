@@ -8,13 +8,8 @@ permissions:
       
 jobs: 
   build:
-  #   runs-on: macos-latest
-    # - name: Checkout code
-    #   uses: actions/checkout@v2
-      
-    # - name: 'Az CLI login'
-      uses: ./.github/workflows/az_auth.yml
+    uses: ./.github/workflows/az_auth.yml
+    secrets: inherit
 
-
-    # - name: download file
-      uses: ./.github/workflows/az_download.yml
+    uses: ./.github/workflows/az_download.yml
+    secrets: inherit
