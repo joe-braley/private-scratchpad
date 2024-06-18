@@ -14,9 +14,8 @@ jobs:
         uses: actions/checkout@v2
         
       - name: 'Az CLI login'
-        uses: ./.github/workflows/az_auth.yml
-        with:
+        uses: ./.github/workflows/az_auth
+
 
       - name: download file
-        uses: ./.github/workflows/az_download.yml
-        with:
+        uses: ./.github/workflows/az_download
