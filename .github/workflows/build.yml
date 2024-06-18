@@ -7,24 +7,11 @@ permissions:
   contents: read
       
 jobs: 
-  build-and-deploy:
+  build:
     runs-on: macos-latest
     steps:
     - name: 'Az CLI login'
-      uses: azure/login@v1
-      with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  
-    - name: 'Run Azure CLI commands'
-      run: |
-          az storage blob download --account-name joedocumentstorage --container-name newcontainer --name README.txt --file ./README.txt --auth-mode login
+      uses: ./.github/workflows/az_auth.yml
 
-    - name: 'List current dir'
-      run: |
-          ls -la .
-
-    - name: 'Run command'
-      run: |
-          cat README.txt
+    - name: download file
+      uses: ./.github/workflows/az_download.yml

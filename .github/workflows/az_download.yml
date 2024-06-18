@@ -1,0 +1,10 @@
+on:
+  workflow_call:
+      
+jobs: 
+  download-blob:
+    runs-on: macos-latest
+    steps:
+    - name: 'Run Azure CLI commands'
+      run: |
+          az storage blob download --account-name joedocumentstorage --container-name newcontainer --name README.txt --file ./README.txt --auth-mode login
