@@ -10,4 +10,7 @@ jobs:
   build:
     uses: ./.github/workflows/az_auth.yml
     secrets: inherit
+  download:
+    uses: ./github/workflows/az_download.yml
+    secrets: inherit
     # uses: ./.github/workflows/az_download.yml
