@@ -19,7 +19,7 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-          az storage blob download --account-name joedocumentstorage --container-name newcontainer --name README.txt --file . --auth-mode login
+          az storage blob download --account-name joedocumentstorage --container-name newcontainer --name README.txt --file ./README.txt --auth-mode login
 
     - name: 'List current dir'
       run: |
