@@ -19,6 +19,8 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-          az account show
-          az group list
-          pwd
+          az storage blob download --account-name joedocumentstorage --container-name newcontainer --name README.txt --file .
+
+    - name: 'List current dir'
+      run: |
+          ls -la .
