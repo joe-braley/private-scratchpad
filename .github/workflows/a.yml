@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call Workflow
-        uses: ./.github/workflows/a.yml
+        uses: ./.github/actions/b
         with:
           image: mycoolimage
