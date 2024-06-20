@@ -12,5 +12,6 @@ runs:
   steps:
 
     - name: Run test
+      shell: bash
       run: |
         echo "called"
