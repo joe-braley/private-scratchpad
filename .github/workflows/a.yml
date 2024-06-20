@@ -8,7 +8,10 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
       - name: Call Workflow
-        uses: ./.github/actions/b
+        uses: ./.github/workflows/actions/b
         with:
           image: mycoolimage
