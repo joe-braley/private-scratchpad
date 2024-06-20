@@ -1,21 +1,16 @@
 
 name: test
 
-on:
-  workflow_call:
-    # inputs:
-    #   image:
-    #     description: 'image'
-    #     required: true
-    #     type: string
+inputs:
+  image:
+    description: 'image'
+    required: true
+    type: string
 
-jobs:
-  login:
-    runs-on: ubuntu-latest
-    steps:
-      # - name: Check out the repo
-      #   uses: actions/checkout@v2
+runs:
+  using: 'composite'
+  steps:
 
-      - name: Run test
-        run: |
-          echo "called"
+    - name: Run test
+      run: |
+        echo "called"
