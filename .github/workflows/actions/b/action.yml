@@ -3,11 +3,11 @@ name: test
 
 on:
   workflow_call:
-    inputs:
-      image:
-        description: 'image'
-        required: true
-        type: string
+    # inputs:
+    #   image:
+    #     description: 'image'
+    #     required: true
+    #     type: string
 
 jobs:
   login:
@@ -18,4 +18,4 @@ jobs:
 
       - name: Run test
         run: |
-          echo ${{ inputs.image }}
+          echo "called"
