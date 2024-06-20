@@ -1,0 +1,21 @@
+
+name: test
+
+on:
+  workflow_call:
+    inputs:
+      image:
+        description: 'image'
+        required: true
+        type: string
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Run test
+        run: |
+          echo ${{ inputs.image }}
