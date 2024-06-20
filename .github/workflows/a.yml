@@ -3,7 +3,12 @@ name: Main Workflow
 
 on:
   workflow_dispatch:
-
+    inputs:
+      image:
+        description: 'image'
+        default: myimage
+        required: true
+        type: string
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -14,4 +19,4 @@ jobs:
       - name: Call Workflow
         uses: ./.github/workflows/actions/b
         with:
-          image: mycoolimage
+          image: ${{ inputs.image }}
