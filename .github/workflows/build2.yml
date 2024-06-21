@@ -1,0 +1,20 @@
+name: Test env
+on:
+  workflow_dispatch:
+
+jobs: 
+  build:
+     runs-on: ubuntu-latest
+     steps:
+      - name: env
+        run: |
+          python ./python/env.py
+      
+      - name: debug
+        shell: bash
+        run: |
+          echo $TEST1
+          echo $TEST2
+          echo $TEST3
+          echo $TEST4
+          echo $TEST5
