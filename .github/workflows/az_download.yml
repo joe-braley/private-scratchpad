@@ -1,7 +1,7 @@
 name: Download
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 permissions:
   id-token: write
