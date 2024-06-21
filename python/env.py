@@ -4,7 +4,7 @@ def main(env_var_name, env_value):
     github_env = os.getenv("GITHUB_ENV")
 
     with open(github_env, 'w') as file:
-        file.write(f"{ env_var_name }={ env_value }")
+        file.write(f"{ env_var_name }={ env_value }\n")
 
 if __name__ == "__main__":
     main("TEST1", "A")
