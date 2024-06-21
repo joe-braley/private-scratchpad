@@ -3,12 +3,14 @@ name: Main Workflow
 
 on:
   workflow_dispatch:
-    # inputs:
-    #   image:
-    #     description: 'image'
-    #     default: myimage
-    #     required: true
-    #     type: string
+    inputs:
+      system:
+        description: 'system'
+        required: true
+        type: choices
+        options:
+          - windows
+          - linux
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -17,6 +19,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Call Workflow
+        if: ${{ inputs.system == 'windows' }}
         uses: ./.github/workflows/actions/b
-        # with:
-        #   image: ${{ inputs.image }}
+      
+      - name: echo
+        shell: bash
+        run: |
+          echo done
