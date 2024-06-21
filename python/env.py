@@ -3,7 +3,7 @@ import os
 def main(env_var_name, env_value):
     github_env = os.getenv("GITHUB_ENV")
 
-    with open(github_env, 'w') as file:
+    with open(github_env, 'a') as file:
         file.write(f"{ env_var_name }={ env_value }\n")
 
 if __name__ == "__main__":
