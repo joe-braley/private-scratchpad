@@ -1,4 +1,4 @@
-name: Az Authenticate
+name: Download
 
 on:
   workflow_call:
