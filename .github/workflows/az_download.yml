@@ -31,5 +31,6 @@ jobs:
                 --container-name "newcontainer" `
                 --name "$blob" `
                 --file ".\$blob" `
-                --auth-mode login
+                --auth-mode login `
+                *> $null 2>&1
             }
