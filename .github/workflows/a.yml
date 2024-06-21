@@ -7,7 +7,7 @@ on:
       system:
         description: 'system'
         required: true
-        type: choices
+        type: choice
         options:
           - windows
           - linux
