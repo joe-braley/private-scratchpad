@@ -21,14 +21,14 @@ jobs:
             tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     
-      - name: 'Run Azure CLI commands'
+      - name: 'Download'
         shell: powershell
         run: |
-            $blobArray = "jdk-11.0.23-windows-x64.zip,windows-testimage-11.0.23-windows-x64.zip" -split ','
+            $blobArray = "README.txt" -split ','
             foreach ($blob in $blobArray) {
                 az storage blob download `
-                --account-name "${{ secrets.storage_acct }}" `
-                --container-name "${{ secrets.container }}" `
+                --account-name "joedocumentstorage" `
+                --container-name "newcontainer" `
                 --name "$blob" `
                 --file ".\$blob" `
                 --auth-mode login
