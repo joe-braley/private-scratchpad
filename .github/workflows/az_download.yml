@@ -22,5 +22,14 @@ jobs:
             subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     
       - name: 'Run Azure CLI commands'
+        shell: powershell
         run: |
-            az storage blob download --account-name joedocumentstorage --container-name newcontainer --name README.txt --file ./README.txt --auth-mode login
+            $blobArray = "jdk-11.0.23-windows-x64.zip,windows-testimage-11.0.23-windows-x64.zip" -split ','
+            foreach ($blob in $blobArray) {
+                az storage blob download `
+                --account-name "${{ secrets.storage_acct }}" `
+                --container-name "${{ secrets.container }}" `
+                --name "$blob" `
+                --file ".\$blob" `
+                --auth-mode login
+            }
