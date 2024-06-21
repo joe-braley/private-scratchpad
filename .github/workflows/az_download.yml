@@ -32,5 +32,5 @@ jobs:
                 --name "$blob" `
                 --file ".\$blob" `
                 --auth-mode login `
-                *> $null 2>&1
+                > $null 2>&1
             }
