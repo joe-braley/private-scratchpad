@@ -1,3 +1,5 @@
+import os
+
 def main(env_var_name, env_value):
     github_env = os.getenv("GITHUB_ENV")
 
